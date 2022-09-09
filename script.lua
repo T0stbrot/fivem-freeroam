@@ -1,7 +1,35 @@
+--No Traffic
+Citizen.CreateThread(function ()
+	while true do
+	  Citizen.Wait(0)
+		if Config.NoTraffic == true then
+			SetParkedVehicleDensityMultiplierThisFrame(0.0)		
+			SetRandomVehicleDensityMultiplierThisFrame(0.0)
+			SetVehicleDensityMultiplierThisFrame(0.0)
+			SetSomeVehicleDensityMultiplierThisFrame(0.0)
+			SetPedDensityMultiplierThisFrame(0.0)
+			SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
+		end
+	end
+  end)
+  
+  AddEventHandler('onResourceStart', function (resourceName)
+	if Config.NoTraffic == true then
+	  SetFarDrawVehicles(false)
+	end
+  end)
+  
+  AddEventHandler('onResourceStop', function (resourceName)
+	if Config.NoTraffic == true then
+	  SetFarDrawVehicles(true)
+	end
+  end)  
+
 --Keep Engine On
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
+		if Config.KeepEngineOn == true then
 
 		local ped = GetPlayerPed(-1)
 		
@@ -14,6 +42,7 @@ Citizen.CreateThread(function()
 					SetVehicleEngineOn(veh, true, true, true)
 				end
 			end
+		end
 		end
 	end
 end)
