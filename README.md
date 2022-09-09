@@ -1,6 +1,6 @@
 # Freeroam Options
 Here are the Options with more coming soon:
-No Wanted Level
-Infinite Ammo
-Infinite Stamina
-Disable PVP
+1. No Wanted Level
+2. Infinite Ammo
+3. Infinite Stamina
+4. Disable PVP
